@@ -2,8 +2,9 @@ import {ApiError, Asset, TradeRequest, TradeResponse} from "../types/trade";
 import {OrderbookRaw, OrderbookRow, OrderbookSide, OrderbookViewModel} from "../types/orderbook";
 
 
-const BASEURL: string = '';
-
+const BASEURL: string = process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3001'
+    : '/api';
 
 // Orderbook API
 
